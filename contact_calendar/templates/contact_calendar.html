@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>{{ title }}</title>
+	</head>
+	<body>
+            <h1 align='center'>{{ title }}</h1>
+            <h2 align='center'>{{ error_msg }}</h2>
+	    <table border=1 align='center'>
+		<tr>
+                {% for day in calendar %}
+		  <th>{{ day.date }}</th>
+		{% endfor %}
+		</tr>
+		<tr>
+                {% for day in calendar %}
+		  <td>{{ day.contact_method }}</td>
+		{% endfor %}
+		</tr>
+	    </table>
+	</body>
+</html>
