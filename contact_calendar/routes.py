@@ -4,6 +4,8 @@ import re
 from flask import render_template, request
 from contact_calendar import app
 
+
+@app.route('/')
 @app.route('/contact_calendar')
 def contact_calendar():
     """Display the contact calendar based on API data."""
@@ -39,7 +41,7 @@ def contact_calendar():
 
 def parse_data(data):
     """Parse json data from api into values needed for calendar."""
-    contact_method = []
+    calendar = []
 
     if (data['cod'] == '200'):
         curr_date = ''
@@ -69,7 +71,7 @@ def parse_data(data):
                     temp_cnt = 0
 
                     # store previous date's data
-                    contact_method.append({
+                    calendar.append({
                         'date': curr_date,
                         'contact_method': get_contact_method(avg_temp, curr_weather)
                     })
@@ -90,9 +92,9 @@ def parse_data(data):
 
     # handle error returned from api
     else:
-        contact_method.append({'error_msg': 'Error: ' + data['message']})
+        calendar.append({'error_msg': 'Error: ' + data['message']})
 
-    return contact_method
+    return calendar
    
 
 def get_contact_method(temp, weather):
