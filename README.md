@@ -46,4 +46,9 @@ Note: this Flask app uses a .flaskenv file to set the FLASK_APP environment vari
 2. Run the Flask application
 `python -m flask run`
 3. Once the server starts, it will output a message like `Running on http://127.0.0.1:5000`. Copy
-the url provided into a web browser.
+the url provided into a web browser and append '/contact_calendar' to the end of the url
+`http://127.0.0.1:5000/contact_calendar/`
+4. The city will default to Minneapolis. You can change the city for the forecast by appending 
+the `/city/state` to the url
+`http://127.0.0.1:5000/contact_calendar/savage/mn`
+5. Note: If no state is given, the API will return a forecase for some city with that name
