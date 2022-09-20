@@ -15,6 +15,7 @@ hours, and events. Acme does this through various channels including:
 * texts
 * email
 * others
+
 Acme prides itself on the ability to determine both the best message to use to engage food lovers
 and when to most effectively engage them.
 
@@ -51,4 +52,4 @@ the url provided into a web browser and append '/contact_calendar' to the end of
 4. The city will default to Minneapolis. You can change the city for the forecast by appending 
 the `/city/state` to the url
 `http://127.0.0.1:5000/contact_calendar/savage/mn`
-5. Note: If no state is given, the API will return a forecase for some city with that name
+5. Note: If no state is given, the API will return a forecast for some city with that name
