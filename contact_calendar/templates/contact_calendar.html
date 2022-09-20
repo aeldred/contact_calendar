@@ -1,21 +1,39 @@
 <html>
 	<head>
 		<title>{{ title }}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/contact_calendar.css') }}">
 	</head>
 	<body>
-            <h1 align='center'>{{ title }}</h1>
-            <h2 align='center'>{{ error_msg }}</h2>
-	    <table border=1 align='center'>
+      <h1>{{ title }}</h1>
+      <h2>{{ city }}{%if state %}, {{ state }}{% endif %}</h2>
+      {% if error_msg %}
+        <h2 class=error>{{ error_msg }}</h2>
+      {% endif %}
+	  <table border=1 align='center'>
 		<tr>
-                {% for day in calendar %}
-		  <th>{{ day.date }}</th>
-		{% endfor %}
+            <th></th>
+          {% for day in calendar %}
+		    <th>{{ day.date }}</th>
+		  {% endfor %}
 		</tr>
 		<tr>
-                {% for day in calendar %}
-		  <td>{{ day.contact_method }}</td>
-		{% endfor %}
+          <th>Avg. Temp</th>
+          {% for day in calendar %}
+		    <td>{{ day.avg_temp }} &degF</td>
+		  {% endfor %}
 		</tr>
-	    </table>
+		<tr>
+          <th>Weather</th>
+          {% for day in calendar %}
+		    <td>{{ day.weather }}</td>
+		  {% endfor %}
+		</tr>
+		<tr>
+          <th>Contact Method</th>
+            {% for day in calendar %}
+		      <td>{{ day.contact_method }}</td>
+		    {% endfor %}
+		</tr>
+	  </table>
 	</body>
 </html>

@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-transform: capitalize;
+    text-align: center;
+}
+
+h2.error { 
+    color: red;
+    text-align: center;
+}
+
+table {
+    width: 85%;
+    border: 1px solid #eee;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+    background-color: #02AC6D;
+    color: white;
+    text-transform: capitalize;
+}
+
+td:nth-child(odd){background-color: #d2d2d2;}
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-transform: capitalize;
+}
